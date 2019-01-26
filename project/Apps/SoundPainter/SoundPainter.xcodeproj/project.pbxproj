@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
+		EB0C19DA21FC61500008E028 /* JLPainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB0C19D821FC61500008E028 /* JLPainter.cpp */; };
+		EB0C19DE21FC64650008E028 /* JLGlitchedPainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB0C19DC21FC64650008E028 /* JLGlitchedPainter.cpp */; };
 		EB3F4B5421F8FC35004E3CBE /* JLSound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3F4B5321F8FC35004E3CBE /* JLSound.cpp */; };
 /* End PBXBuildFile section */
 
@@ -206,6 +208,10 @@
 		E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofApp.h; path = src/ofApp.h; sourceTree = SOURCE_ROOT; };
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		EB0C19D821FC61500008E028 /* JLPainter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = JLPainter.cpp; sourceTree = "<group>"; };
+		EB0C19D921FC61500008E028 /* JLPainter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLPainter.h; sourceTree = "<group>"; };
+		EB0C19DC21FC64650008E028 /* JLGlitchedPainter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = JLGlitchedPainter.cpp; sourceTree = "<group>"; };
+		EB0C19DD21FC64650008E028 /* JLGlitchedPainter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLGlitchedPainter.h; sourceTree = "<group>"; };
 		EB3F4B5221F8FC35004E3CBE /* JLSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLSound.h; sourceTree = "<group>"; };
 		EB3F4B5321F8FC35004E3CBE /* JLSound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JLSound.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -538,6 +544,10 @@
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
 				EB3F4B5321F8FC35004E3CBE /* JLSound.cpp */,
 				EB3F4B5221F8FC35004E3CBE /* JLSound.h */,
+				EB0C19D821FC61500008E028 /* JLPainter.cpp */,
+				EB0C19D921FC61500008E028 /* JLPainter.h */,
+				EB0C19DC21FC64650008E028 /* JLGlitchedPainter.cpp */,
+				EB0C19DD21FC64650008E028 /* JLGlitchedPainter.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -643,6 +653,8 @@
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				EB3F4B5421F8FC35004E3CBE /* JLSound.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
+				EB0C19DA21FC61500008E028 /* JLPainter.cpp in Sources */,
+				EB0C19DE21FC64650008E028 /* JLGlitchedPainter.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

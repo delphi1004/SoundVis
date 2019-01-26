@@ -35,7 +35,7 @@ void JLSound::setup(int maxBand)
     
     length = 320;// this should be automated
     
-    mySound.load("2.mp3");
+    mySound.load("6.mp3");
     
     mySound.setLoop(false);
     

@@ -2,6 +2,7 @@
 
 #include "ofMain.h"
 #include "JLSound.h"
+#include "JLGlitchedPainter.h"
 
 // private property area ////////////////////////////////////////////////////////////////
 
@@ -19,8 +20,15 @@ class ofApp : public ofBaseApp
     // private property area ////////////////////////////////////////////////////////////////
     
     JLSound mySound;
+    JLPainter *myPainter;
     
     int maxBand;
+    bool shouldSave;
+    
+    ofFbo mySketch;
+    
+    int sketchWidth;
+    int sketchHeight;
     
     
     // public property area ////////////////////////////////////////////////////////////////
@@ -33,6 +41,7 @@ class ofApp : public ofBaseApp
 private:
     
     void initDefaultData();
+    void captureScreen();
     
     // public method area ////////////////////////////////////////////////////////////////
     

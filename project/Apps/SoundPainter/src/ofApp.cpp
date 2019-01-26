@@ -7,12 +7,35 @@ void ofApp::initDefaultData()
 {
     maxBand = 128;
     
+    mySketch.allocate(sketchWidth,sketchHeight);
+    
+    mySketch.begin();
+    
+    ofClear(0,0,0,255);
+    
+    mySketch.end();
+    
+    myPainter = new JLGlitchedPainter(sketchWidth,sketchHeight);
+
     mySound.setup(maxBand);
     
     mySound.play();
+    
+    myPainter->setSoundFFT(mySound.getFFT(),maxBand);
+    myPainter->initDefaultData();
 }
 
-
+void ofApp::captureScreen()
+{
+    ofImage image;
+    ofPixels pixels;
+    
+    pixels.allocate(sketchWidth,sketchHeight, 4);
+        
+    mySketch.readToPixels(pixels);
+    
+    ofSaveImage(pixels, "September-"+ofGetTimestampString()+".png", OF_IMAGE_QUALITY_BEST);
+}
 
 
 
@@ -20,43 +43,66 @@ void ofApp::initDefaultData()
 
 
 
-
 //--------------------------------------------------------------
+
 void ofApp::setup()
 {
-    ofSetWindowShape(ofGetScreenWidth(), ofGetScreenHeight());
+    sketchWidth = 3508;
+    sketchHeight= 4961;
     
-    ofSetBackgroundColor(30,30,30);
+    //sketchWidth = 768;
+    //sketchHeight= 1024;
     
-    ofSetColor(255, 255, 255,10);
+   // ofSetWindowShape(sketchWidth,sketchHeight);
+    
+    ofSetBackgroundColor(0,0,0,255);
+    
+    ofSetColor(255, 255, 255,255);
     
     ofSetBackgroundAuto(false);
     
     ofSetLineWidth(0.1);
     
-    ofBeginSaveScreenAsPDF("screenshot-"+ofGetTimestampString()+".pdf", false);
+    ofSetFrameRate(1000);
     
     initDefaultData();
 }
 
 //--------------------------------------------------------------
+
 void ofApp::update()
 {
-    mySound.update();
+    for (int i=0;i<1;i++)
+    {
+        mySound.update();
+        myPainter->update();
+        
+        mySketch.begin();
+        
+        myPainter->draw();
+        
+        mySketch.end();
+    }
+    
+    if (shouldSave == true)
+    {
+        captureScreen();
+        
+        shouldSave = false;
+        
+        ofLog() << "Data saved!";
+        
+        ofExit();
+    }
 }
 
 //--------------------------------------------------------------
+
 void ofApp::draw()
 {
-    float x1,y1,x2,y2;
+    //mySketch.draw(0,0);
     
-    x1 = ofRandom(ofGetScreenWidth());
-    y1 = ofRandom(ofGetScreenHeight());
-    
-    x2 = ofRandom(ofGetScreenWidth()/2);
-    y2 = ofRandom(ofGetScreenHeight()/2);
-    
-    ofDrawLine(x1, y1, x2, y2);
+   // mySketch.draw(0,0);
 }
 
 
@@ -64,20 +110,21 @@ void ofApp::draw()
 
 
 //--------------------------------------------------------------
+
 void ofApp::keyPressed(int key)
 {
-    ofEndSaveScreenAsPDF();
-    
-    ofLog() << "Data saved!";
+    ;
 }
 
 //--------------------------------------------------------------
+
 void ofApp::keyReleased(int key)
 {
 
 }
 
 //--------------------------------------------------------------
+
 void ofApp::mouseMoved(int x, int y )
 {
 
@@ -92,7 +139,7 @@ void ofApp::mouseDragged(int x, int y, int button)
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button)
 {
-
+    shouldSave = true;
 }
 
 //--------------------------------------------------------------

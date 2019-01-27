@@ -13,9 +13,14 @@ void ofApp::initDefaultData()
     
     ofClear(0,0,0,255);
     
+    ofSetColor(255, 255, 255);
+    
+    ofDrawRectangle(0, 0, sketchWidth, sketchHeight);
+    
     mySketch.end();
     
     myPainter = new JLGlitchedPainter(sketchWidth,sketchHeight);
+    //myPainter = new JLEllipsedPainter(sketchWidth,sketchHeight);
 
     mySound.setup(maxBand);
     
@@ -34,7 +39,7 @@ void ofApp::captureScreen()
         
     mySketch.readToPixels(pixels);
     
-    ofSaveImage(pixels, "September-"+ofGetTimestampString()+".png", OF_IMAGE_QUALITY_BEST);
+    ofSaveImage(pixels, "ShapeOfMyHeart-"+ofGetTimestampString()+".jpg", OF_IMAGE_QUALITY_BEST);
 }
 
 
@@ -47,23 +52,28 @@ void ofApp::captureScreen()
 
 void ofApp::setup()
 {
-    sketchWidth = 3508;
-    sketchHeight= 4961;
+    //sketchWidth = 3508;
+    //sketchHeight= 4961;
     
-    //sketchWidth = 768;
-    //sketchHeight= 1024;
+    sketchWidth = 768;
+    sketchHeight= 1024;
+    
+    ofEnableSmoothing();
+    ofEnableAlphaBlending();
     
    // ofSetWindowShape(sketchWidth,sketchHeight);
     
-    ofSetBackgroundColor(0,0,0,255);
+    ofSetBackgroundColor(255,255,255,255);
     
-    ofSetColor(255, 255, 255,255);
+    ofSetColor(255,255,255,255);
     
-    ofSetBackgroundAuto(false);
+    //ofSetBackgroundAuto(false);
     
     ofSetLineWidth(0.1);
     
-    ofSetFrameRate(1000);
+    ofSetCircleResolution(50);
+    
+    ofSetFrameRate(2);
     
     initDefaultData();
 }
@@ -79,7 +89,7 @@ void ofApp::update()
         
         mySketch.begin();
         
-        myPainter->draw();
+        myPainter->drawBox();
         
         mySketch.end();
     }
@@ -102,7 +112,9 @@ void ofApp::draw()
 {
     //mySketch.draw(0,0);
     
-   // mySketch.draw(0,0);
+    mySketch.draw(0,0);
+    
+    //myPainter->drawCurve();
 }
 
 

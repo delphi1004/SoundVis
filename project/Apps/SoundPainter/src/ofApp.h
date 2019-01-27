@@ -3,6 +3,7 @@
 #include "ofMain.h"
 #include "JLSound.h"
 #include "JLGlitchedPainter.h"
+#include "JLEllipsedPainter.h"
 
 // private property area ////////////////////////////////////////////////////////////////
 

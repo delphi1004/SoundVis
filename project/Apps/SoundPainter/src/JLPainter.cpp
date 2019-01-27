@@ -63,3 +63,18 @@ void JLPainter::draw()
 {
     ;
 }
+
+void JLPainter::drawBox()
+{
+    ;
+}
+
+void JLPainter::drawElipse()
+{
+    ;
+}
+
+void JLPainter::drawCurve()
+{
+    ;
+}

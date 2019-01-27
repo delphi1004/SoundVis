@@ -60,6 +60,9 @@ public:
     virtual void setDefaultData();
     virtual void update();
     virtual void draw();
+    virtual void drawBox();
+    virtual void drawElipse();
+    virtual void drawCurve();
     virtual void stop();
     
 };

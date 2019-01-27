@@ -12,6 +12,7 @@
 		EB0C19DA21FC61500008E028 /* JLPainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB0C19D821FC61500008E028 /* JLPainter.cpp */; };
 		EB0C19DE21FC64650008E028 /* JLGlitchedPainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB0C19DC21FC64650008E028 /* JLGlitchedPainter.cpp */; };
 		EB3F4B5421F8FC35004E3CBE /* JLSound.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB3F4B5321F8FC35004E3CBE /* JLSound.cpp */; };
+		EB4C9B4021FE3EE400AB4D10 /* JLEllipsedPainter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EB4C9B3E21FE3EE400AB4D10 /* JLEllipsedPainter.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -214,6 +215,8 @@
 		EB0C19DD21FC64650008E028 /* JLGlitchedPainter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLGlitchedPainter.h; sourceTree = "<group>"; };
 		EB3F4B5221F8FC35004E3CBE /* JLSound.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLSound.h; sourceTree = "<group>"; };
 		EB3F4B5321F8FC35004E3CBE /* JLSound.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JLSound.cpp; sourceTree = "<group>"; };
+		EB4C9B3E21FE3EE400AB4D10 /* JLEllipsedPainter.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = JLEllipsedPainter.cpp; sourceTree = "<group>"; };
+		EB4C9B3F21FE3EE400AB4D10 /* JLEllipsedPainter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLEllipsedPainter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -548,6 +551,8 @@
 				EB0C19D921FC61500008E028 /* JLPainter.h */,
 				EB0C19DC21FC64650008E028 /* JLGlitchedPainter.cpp */,
 				EB0C19DD21FC64650008E028 /* JLGlitchedPainter.h */,
+				EB4C9B3E21FE3EE400AB4D10 /* JLEllipsedPainter.cpp */,
+				EB4C9B3F21FE3EE400AB4D10 /* JLEllipsedPainter.h */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -652,6 +657,7 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				EB3F4B5421F8FC35004E3CBE /* JLSound.cpp in Sources */,
+				EB4C9B4021FE3EE400AB4D10 /* JLEllipsedPainter.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
 				EB0C19DA21FC61500008E028 /* JLPainter.cpp in Sources */,
 				EB0C19DE21FC64650008E028 /* JLGlitchedPainter.cpp in Sources */,

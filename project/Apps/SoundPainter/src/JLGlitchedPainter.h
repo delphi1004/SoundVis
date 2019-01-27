@@ -46,6 +46,8 @@ public:
     void initDefaultData();
     void update();
     void draw();
+    void drawBox();
+    void drawElipse();
     
 };
 

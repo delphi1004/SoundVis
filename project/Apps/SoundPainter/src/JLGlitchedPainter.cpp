@@ -31,7 +31,7 @@ void JLGlitchedPainter::initDefaultData()
     
     dataInterval = (ofGetScreenWidth() / (dataSize));
     
-    dataInterval = 13 * 15;
+    //dataInterval = 13 * 15; // for draw();
     
     dataHeight = (dataInterval * 0.6);
     
@@ -56,7 +56,7 @@ void JLGlitchedPainter::draw()
         
         //ofDrawRectangle(curPos.x, curPos.y, dataInterval+soundData, dataHeight);
         
-        ofSetColor(targetColor+50,100);
+        ofSetColor(targetColor+50,30);
         
         ofDrawLine(curPos.x, curPos.y,curPos.x+(dataInterval+soundData),curPos.y);
         
@@ -73,6 +73,74 @@ void JLGlitchedPainter::draw()
     {
         curPos.y = 0;
     }
+}
+
+void JLGlitchedPainter::drawBox()
+{
+    ofColor targetColor;
+    float soundData;
+    float clampedData;
+    
+    for (int i=0;i<dataSize;i++)
+    {
+        soundData = getSoundFFT()[i];
+        
+        clampedData = ofClamp(soundData,-10,5);
+        
+        targetColor = ofColor::fromHsb(soundData+150,255,255);
+        
+        ofSetColor(targetColor,clampedData+ (i));
+        
+        //ofDrawRectangle(curPos.x, curPos.y, dataInterval, soundData);
+        
+        //ofDrawRectangle(curPos.x, curPos.y, dataInterval,-soundData);
+        
+        ofDrawEllipse(curPos.x, curPos.y, soundData, soundData);
+        
+        curPos.x += (dataInterval+5);
+        
+        //ofLog() << soundData;
+    }
+    
+    curPos.x = 0;
+    
+    curPos.y += 20;
+    
+    if (curPos.y > sketchHeight)
+    {
+        curPos.y = 0;
+    }
+    
+}
+
+void JLGlitchedPainter::drawElipse()
+{
+    ofColor targetColor;
+    float soundData;
+    float clampedData;
+    float sum;
+    
+    sum = 0;
+    
+    for (int i=0;i<dataSize;i++)
+    {
+        sum += getSoundFFT()[i];
+    }
+    
+    sum /= dataSize;
+    
+    targetColor = ofColor::fromHsb(sum+150,255,255);
+    
+    ofSetColor(targetColor,1);
+    
+    sum *= 50;
+    
+    ofNoFill();
+    
+    ofSetLineWidth(0.1);
+    
+    ofDrawEllipse(sketchWidth/2,sketchHeight/2,sum,sum);
+    
 }
 
 
